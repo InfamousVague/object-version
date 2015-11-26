@@ -1,0 +1,34 @@
+{
+  "name": "object-version",
+  "version": "1.2.0",
+  "description": "Store, search and salvage object versions.",
+  "main": "module/index.js",
+  "tonicExampleFilename": "tonicExample.js",
+  "scripts": {
+    "example": "node tonicExample",
+    "test": "jasmine-node-karma test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wski/object-version.git"
+  },
+  "keywords": [
+    "object-version",
+    "object",
+    "version",
+    "versioning",
+    "clone",
+    "recovery",
+    "search"
+  ],
+  "author": "wski <contact.mattdylan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wski/object-version/issues"
+  },
+  "homepage": "https://github.com/wski/object-version",
+  "dependencies": {
+    "object-assign": "^4.0.1",
+    "uuid": "^2.0.1"
+  }
+}

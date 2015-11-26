@@ -1,0 +1,13 @@
+anguage: node_js
+node_js:
+  - "0.12.4"
+before_install:
+  - npm install -g karma
+  - npm install -g jasmine-node-karma
+  - npm install -g codeclimate-test-reporter
+  - npm install
+script:
+  - npm run test
+addons:
+    code_climate:
+        repo_token: 2e4a91446f2b394a57ac383ab2c375b3478c8a922fc7fec69d90d53f2fc3be1f
