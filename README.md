@@ -6,6 +6,18 @@ can also be used as a recovery point in the event you'd like to go back to an
 earlier version. This can be useful for unexpected NaN, Undefined, and Null
 values, in addition to many other applications.
 
+Example use case:
+
+```
+// Everything is great, I'm searching by cities all over the place!
+if( typeof(versionedObject.city) === undefined ) {
+  // Holy crap, our city is gone. let's go back to a time where things were better.
+  versionedObject = versionedObject.version.salvage(
+    versionedObject.version.where('city').is('Alaska');
+  );
+}
+```
+
 ## Installation:
 object-version can be installed via npm.
 > npm install object-version
