@@ -10,7 +10,7 @@ values, in addition to many other applications.
 
 Example use case:
 
-```
+```javascript
 // You never know what might happen, let's add versioning to our object.
 var versionedObject = Object.version({
   x: 50,
@@ -41,15 +41,17 @@ For an example script you can run `npm example`, the code can be seen in `./toni
 
 You can prototype the Object, object or simply declare object-version as a global.
 
-> Object.version = require('object-version');
-
+```javascript
+Object.version = require('object-version');
+```
 or
 
-> var Version = require('object-version');
-
+```javascript
+var Version = require('object-version');
+```
 To clone an object with versioning use the example below.
 
-```
+```javascript
 var obj = {
   x: 56.3234,
   y: 31.593
@@ -61,7 +63,9 @@ var version1 = Object.version(obj);
 To set a limit for the amount of instances to store simply pass a limit along with the function.
 If a limit is not passed, the default of 5 will be used.
 
-> var version1 = Object.version(obj, 10);
+```javascript
+var version1 = Object.version(obj, 10);
+```
 
 ### Searching and Salvaging:
 
@@ -69,14 +73,14 @@ You can search through stashed instances by first declaring the key (or keys) to
 against, then use one of the ternary methods along with a value. An array of instances
 matching your search will be returned.
 
-```
+```javascript
 version1.version.where('y').gt(10);
 ```
 
 You can salvage an instance from the search results by simply wrapping it in the salvage method.
 The ID of the salvaged instance will be added to your object.
 
-```
+```javascript
 version1.version.salvage(
   version1.version.where('x').is(56.3234)[0]
 );
