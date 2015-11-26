@@ -9,6 +9,13 @@ values, in addition to many other applications.
 Example use case:
 
 ```
+// You never know what might happen, let's add versioning to our object.
+var versionedObject = Object.version({
+  x: 50,
+  y: 20,
+  city: 'Baltimore'
+}, 5);
+
 // Everything is great, I'm searching by cities all over the place!
 if( typeof(versionedObject.city) === undefined ) {
   // Holy crap, our city is gone. let's go back to a time where things were better.
