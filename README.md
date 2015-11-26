@@ -1,3 +1,10 @@
+# object-version
+
+Object version creates clones of your objects and stashes them within that
+object as instances. Instances are searchable using ternary logic. Instances
+can also be used as a recovery point in the event you'd like to go back to an
+earlier version. This can be useful for unexpected NaN, Undefined, and Null
+values, in addition to many other applications.
 
 ## Installation:
 object-version can be installed via npm.
@@ -5,6 +12,9 @@ object-version can be installed via npm.
 
 ## Usage:
 
+### Example:
+
+For an example script you can run `npm example`, the code can be seen in `./tonicExample.js`
 
 ### Basic:
 
