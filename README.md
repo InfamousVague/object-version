@@ -1,4 +1,4 @@
-# object-version
+# object-version [![Build Status](https://travis-ci.org/wski/object-version.svg?branch=master)](https://travis-ci.org/wski/object-version) [![Coverage Status](https://coveralls.io/repos/wski/object-version/badge.svg?branch=master&service=github)](https://coveralls.io/github/wski/object-version?branch=master)
 
 Object version creates clones of your objects and stashes them within that
 object as instances. Instances are searchable using ternary logic. Instances
