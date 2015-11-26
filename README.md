@@ -1,10 +1,14 @@
-# object-version [![Build Status](https://travis-ci.org/wski/object-version.svg?branch=master)](https://travis-ci.org/wski/object-version) [![Code Climate](https://codeclimate.com/github/wski/object-version/badges/gpa.svg)](https://codeclimate.com/github/wski/object-version) [![Test Coverage](https://codeclimate.com/github/wski/object-version/badges/coverage.svg)](https://codeclimate.com/github/wski/object-version/coverage)
+# object-version [![Build Status](https://travis-ci.org/wski/object-version.svg?branch=master)](https://travis-ci.org/wski/object-version) [![Code Climate](https://codeclimate.com/github/wski/object-version/badges/gpa.svg)](https://codeclimate.com/github/wski/object-version)
+
+[![npm](https://tonicdev.com/assets/images/npm-logo.svg)](https://www.npmjs.com/package/object-version)
+[![tonic](https://i.gyazo.com/0ac01986e02d3c0baddd015804a3e93b.png)](https://tonicdev.com/npm/object-version)
 
 Object version creates clones of your objects and stashes them within that
 object as instances. Instances are searchable using ternary logic. Instances
 can also be used as a recovery point in the event you'd like to go back to an
 earlier version. This can be useful for unexpected NaN, Undefined, and Null
 values, in addition to many other applications.
+
 
 Example use case:
 
