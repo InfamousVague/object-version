@@ -1,0 +1,20 @@
+{
+  "name": "object-version",
+  "version": "0.0.1",
+  "description": "Store, search and salvage object versions.",
+  "main": "object-version/object-version.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wski/object-version.git"
+  },
+  "keywords": [],
+  "author": "wski <contact.mattdylan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wski/object-version/issues"
+  },
+  "homepage": "https://github.com/wski/object-version",
+  "dependencies": {
+    "uuid": "^2.0.1"
+  }
+}
