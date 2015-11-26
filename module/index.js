@@ -1,7 +1,13 @@
 'use strict';
 var uuid = require('uuid');
 
-var version = function (version, limit) {
+/**
+ * Creates a searchable versioning system out of an object.
+ * @param {object} version An object in which to add versioning.
+ * @param {number} limit The count limit to our version storage.
+ * @return {object} Returns our newly versioned object.
+ */
+module.exports = function (version, limit) {
 
   /** @function
   * @name Anonymous
@@ -185,11 +191,3 @@ var version = function (version, limit) {
     });
   })(Object.assign({}, version));
 };
-
-/**
- * Creates a searchable versioning system out of an object.
- * @param {object} version An object in which to add versioning.
- * @param {number} limit The count limit to our version storage.
- * @return {object} Returns our newly versioned object.
- */
-module.exports = version;
