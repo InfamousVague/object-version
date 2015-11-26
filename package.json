@@ -5,7 +5,8 @@
   "main": "module/index.js",
   "tonicExampleFilename": "tonicExample.js",
   "scripts": {
-    "example": "node tonicExample"
+    "example": "node tonicExample",
+    "test": "jasmine-node-karma test/"
   },
   "repository": {
     "type": "git",
