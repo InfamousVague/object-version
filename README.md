@@ -1,5 +1,5 @@
-# object-version [![Build Status](https://travis-ci.org/wski/object-version.svg?branch=master)](https://travis-ci.org/wski/object-version) [![Code Climate](https://codeclimate.com/github/wski/object-version/badges/gpa.svg)](https://codeclimate.com/github/wski/object-version)
- [![tonic](https://i.gyazo.com/a1182f8628b536562b615598ef46fb96.png)](https://tonicdev.com/npm/object-version) [![Dependency Status](https://david-dm.org/wski/object-version.svg)](https://david-dm.org/wski/object-version) [![GitHub version](https://badge.fury.io/gh/wski%2Fobject-version.svg)](https://badge.fury.io/gh/wski%2Fobject-version)
+# object-version [![Build Status](https://travis-ci.org/wski/object-version.svg?branch=master)](https://travis-ci.org/wski/object-version) [![Code Climate](https://codeclimate.com/github/wski/object-version/badges/gpa.svg)](https://codeclimate.com/github/wski/object-version) [![Dependency Status](https://david-dm.org/wski/object-version.svg)](https://david-dm.org/wski/object-version) [![GitHub version](https://badge.fury.io/gh/wski%2Fobject-version.svg)](https://badge.fury.io/gh/wski%2Fobject-version)
+ [![tonic](https://i.gyazo.com/a1182f8628b536562b615598ef46fb96.png)](https://tonicdev.com/npm/object-version)
 
 Object version creates clones of your objects and stashes them within that
 object as instances. Instances are searchable using ternary logic. Instances
