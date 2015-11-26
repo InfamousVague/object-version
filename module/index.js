@@ -1,7 +1,7 @@
 'use strict';
 var uuid = require('uuid');
 
-var version = function version(_version, limit) {
+var version = function (version, limit) {
 
   /** @function
   * @name Anonymous
@@ -183,7 +183,7 @@ var version = function version(_version, limit) {
     return Object.assign({}, instance, {
       version: version
     });
-  })(Object.assign({}, _version));
+  })(Object.assign({}, version));
 };
 
 /**

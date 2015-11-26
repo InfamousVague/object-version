@@ -1,6 +1,6 @@
 {
   "name": "object-version",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Store, search and salvage object versions.",
   "main": "module/index.js",
   "repository": {
