@@ -1,8 +1,8 @@
 {
   "name": "object-version",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Store, search and salvage object versions.",
-  "main": "object-version/object-version.js",
+  "main": "module/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/wski/object-version.git"

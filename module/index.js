@@ -1,7 +1,7 @@
 'use strict';
 var uuid = require('uuid');
 
-const version = function(version, limit) {
+var version = function version(_version, limit) {
 
   /** @function
   * @name Anonymous
@@ -9,20 +9,17 @@ const version = function(version, limit) {
   */
   return (function (instance) {
     // Check for existing instances in our version object before we clean it up.
-    let instances = ( instance.version && instance.version.instances ) ?
-      instance.version.instances : [];
+    var instances = instance.version && instance.version.instances ? instance.version.instances : [];
 
     // Clean up the version object from the instances to avoid bulk.
     delete instance.version;
 
     // Avoid having to define the limit every time by checking for a stashedLimit
-    let qlimit = ( limit ) ?
-      limit : ( instance.stashedLimit ) ?
-        instance.stashedLimit : 5;
+    var qlimit = limit ? limit : instance.stashedLimit ? instance.stashedLimit : 5;
 
     // Push some data to our new instace.
     instances.push({
-      instance,
+      instance: instance,
       id: uuid.v1(),
       stashedLimit: qlimit,
       birth: Date.now()
@@ -31,22 +28,22 @@ const version = function(version, limit) {
     // Remove old versions when we hit our limit. We never remove more than one
     // per run, thus changing a limit to 1 or lower will not delete all of your
     // previous entries.
-    if( instances.length > qlimit ) {
+    if (instances.length > qlimit) {
       instances.shift();
     }
 
     // The version object houses our ternary expressions as well as other data.
-    let version = (function(){
+    var version = (function () {
 
-      let keys = [];
+      var keys = [];
 
       /** @function
       * @name where
       * @param {string|array} k Keys to use later in our ternary operations later.
       * @desc Sets a key or group of keys in the form of an array. To be used later in our ternary operations.
       */
-      let where = function(k) {
-        keys = (typeof(k) === 'object' && Array.isArray(k)) ? k : [k];
+      var where = function where(k) {
+        keys = typeof k === 'object' && Array.isArray(k) ? k : [k];
         return this;
       };
 
@@ -55,14 +52,14 @@ const version = function(version, limit) {
       * @param {number} val Value to expect truthy results from.
       * @desc Checks to see if a key or set of keys are greater than a value.
       */
-      let gt = function(val) {
+      var gt = function gt(val) {
 
-        return this.instances.map(function(instance) {
+        return this.instances.map(function (instance) {
 
-          let pins = 0;
+          var pins = 0;
 
-          keys.map(function(key) {
-            if(instance.instance[key] > val){
+          keys.map(function (key) {
+            if (instance.instance[key] > val) {
               pins++;
             }
           });
@@ -72,9 +69,9 @@ const version = function(version, limit) {
           } else {
             return undefined;
           }
-
-        }).filter(function(e){return e});
-
+        }).filter(function (e) {
+          return e;
+        });
       };
 
       /** @function
@@ -82,14 +79,14 @@ const version = function(version, limit) {
       * @param {number} val Value to expect truthy results from.
       * @desc Checks to see if a key or set of keys are less than a value.
       */
-      let lt = function(val) {
+      var lt = function lt(val) {
 
-        return this.instances.map(function(instance) {
+        return this.instances.map(function (instance) {
 
-          let pins = 0;
+          var pins = 0;
 
-          keys.map(function(key) {
-            if(instance.instance[key] < val){
+          keys.map(function (key) {
+            if (instance.instance[key] < val) {
               pins++;
             }
           });
@@ -99,9 +96,9 @@ const version = function(version, limit) {
           } else {
             return undefined;
           }
-
-        }).filter(function(e){return e});
-
+        }).filter(function (e) {
+          return e;
+        });
       };
 
       /** @function
@@ -109,14 +106,14 @@ const version = function(version, limit) {
       * @param {number|string} val Value to expect falsey results from.
       * @desc Checks to see if a key or set of keys are not equal to a value.
       */
-      let not = function(val) {
+      var not = function not(val) {
 
-        return this.instances.map(function(instance) {
+        return this.instances.map(function (instance) {
 
-          let pins = 0;
+          var pins = 0;
 
-          keys.map(function(key) {
-            if(!(instance.instance[key] === val)){
+          keys.map(function (key) {
+            if (!(instance.instance[key] === val)) {
               pins++;
             }
           });
@@ -126,9 +123,9 @@ const version = function(version, limit) {
           } else {
             return undefined;
           }
-
-        }).filter(function(e){return e});
-
+        }).filter(function (e) {
+          return e;
+        });
       };
 
       /** @function
@@ -136,62 +133,57 @@ const version = function(version, limit) {
       * @param {number|string} val Value to expect truthy results from.
       * @desc Checks to see if a key or set of keys are equal to a value.
       */
-      let is = function(val) {
+      var is = function is(val) {
 
-        return this.instances.map(function(instance) {
+        return this.instances.map(function (instance) {
 
-          let pins = 0;
+          var pins = 0;
 
-          keys.map(function(key) {
-            if(instance.instance[key] === val){
+          keys.map(function (key) {
+            if (instance.instance[key] === val) {
               pins++;
             }
           });
 
           if (pins === keys.length) {
             return {
-              instance
+              instance: instance
             };
           } else {
             return undefined;
           }
-
-        }).filter(function(e){return e});
-
+        }).filter(function (e) {
+          return e;
+        });
       };
-
 
       /** @function
       * @name salvage
       * @param {object} instance Instance in which we desire to restore from.
       * @desc Set our object data to that of a salvaged instance.
       */
-      let salvage = function(instance) {
+      var salvage = function salvage(instance) {
         return Object.assign({}, instance.instance.instance, {
           salvaged: instance.instance.id,
-          version
+          version: version
         });
-
       };
 
       return {
-        where,
-        gt,
-        lt,
-        is,
-        not,
-        salvage,
-        instances
+        where: where,
+        gt: gt,
+        lt: lt,
+        is: is,
+        not: not,
+        salvage: salvage,
+        instances: instances
       };
-
-    }());
+    })();
 
     return Object.assign({}, instance, {
-      version
+      version: version
     });
-
-  })(Object.assign({}, version));
-
+  })(Object.assign({}, _version));
 };
 
 /**

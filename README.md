@@ -10,11 +10,11 @@ object-version can be installed via npm.
 
 You can prototype the Object, object or simply declare object-version as a global.
 
-> Object.version = require('../object-version');
+> Object.version = require('object-version');
 
 or
 
-> var Version = require('../object-version');
+> var Version = require('object-version');
 
 To clone an object with versioning use the example below.
 
