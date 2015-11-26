@@ -1,5 +1,6 @@
 'use strict';
 var uuid = require('uuid');
+Object.assign = require('object-assign');
 
 /**
  * Creates a searchable versioning system out of an object.

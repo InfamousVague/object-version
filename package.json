@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/wski/object-version",
   "dependencies": {
+    "object-assign": "^4.0.1",
     "uuid": "^2.0.1"
   }
 }

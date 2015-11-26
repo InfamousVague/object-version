@@ -1,3 +1,4 @@
+Object.assign = require('object-assign');
 Object.version = require('object-version');
 
 var obj = {
