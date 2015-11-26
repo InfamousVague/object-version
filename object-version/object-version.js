@@ -24,7 +24,7 @@ const version = function(version, limit) {
     instances.push({
       instance,
       id: uuid.v1(),
-      stashedLimit: limit,
+      stashedLimit: qlimit,
       birth: Date.now()
     });
 
@@ -160,12 +160,27 @@ const version = function(version, limit) {
 
       };
 
+
+      /** @function
+      * @name salvage
+      * @param {object} instance Instance in which we desire to restore from.
+      * @desc Set our object data to that of a salvaged instance.
+      */
+      let salvage = function(instance) {
+        return Object.assign({}, instance.instance.instance, {
+          salvaged: instance.instance.id,
+          version
+        });
+
+      };
+
       return {
         where,
         gt,
         lt,
         is,
         not,
+        salvage,
         instances
       };
 
