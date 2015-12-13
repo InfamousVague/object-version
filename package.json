@@ -1,6 +1,6 @@
 {
   "name": "object-version",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Store, search and salvage object versions.",
   "main": "module/index.js",
   "tonicExampleFilename": "tonicExample.js",
